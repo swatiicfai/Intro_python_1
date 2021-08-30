@@ -1,0 +1,212 @@
+1. Create a program that inputs and displays the name and complete mailing address formatted in the manner that you
+   would usually see on the outside of an envelope.
+
+Ans 1
+
+a, b, d, e, f = input('Name : '), input('Address : '), input('Location : '), input('Pincode : '), input('Country : ')
+def personal_details():
+    print("Name: %s\nAddress: %s\nLocation: %s\nPincode: %s\nCountry: %s"% (a, b, d,e,f))
+personal_details()
+
+*********************************************************************************************************************************************
+
+
+2. Write a program that asks the user to enter his or her name. The program should respond with a message that says
+   hello to the user, using his or her name.
+
+Ans 2.
+
+def personal_details():
+    name =str(input("Enter Name :"))
+    print ("Hello",name)
+personal_details()
+*********************************************************************************************************************************************************************************
+
+3. Write a program that asks the user to enter the width and length of a room. Once the values have been read,
+   your program should compute and display the area of the room. The length and the width will be entered as floating point numbers.
+   Include units in your prompt and output message; either feet or meters, depending on which unit you are more comfortable working with.
+
+Ans 3.
+
+## 
+# Compute the area of a room.   
+# 
+
+# Read the dimensions from the user 
+length = float (input ("Enter the length of the room in feet: ")) 
+width = float (input ("Enter the width of the room in feet: ")) 
+
+# Compute the area of the room   
+area = length * width   
+
+# Display the result 
+print ("The area of the room is", area, "square feet") 
+
+**************************************************************************************************************************************************************************************
+
+4. Create a program that reads the length and width of a farmer’s field from the user in feet. Display the area of the
+   field in acres.
+
+Ans 4.
+
+## 
+# Compute the area of a field, reporting the result in acres. 
+# 
+SQFT_PER_ACRE = 43560 
+
+# Read the dimensions from the user 
+length = float (input ("Enter the length of the field in feet: ")) 
+width = float (input ("Enter the width of the field in feet: ")) 
+
+# Compute the area in acres 
+acres = length * width / SQFT_PER_ACRE 
+
+# Display the result 
+print ("The area of the field is", acres, "acres") 
+
+************************************************************************************************************************************************************************************
+
+5. In many jurisdictions a small deposit is added to drink containers to encourage people to recycle them.
+   In one particular jurisdiction, drink containers holding one liter or less have a $0.10 deposit, and drink containers
+   holding more than one liter have a $0.25 deposit.
+   Write a program that reads the number of containers of each size from the user.
+   Your program should continue by computing and displaying the refund that will be received for returning those containers.
+   Format the output so that it includes a dollar sign and always displays exactly two decimal places.
+
+## 
+# Compute the refund amount for a collection of bottles. 
+# 
+LESS_DEPOSIT = 0.10 
+MORE_DEPOSIT = 0.25 
+
+# Read the number of containers of each size from the user 
+less = int (input ("How many containers 1 litre or less? ")) 
+more = int (input ("How many containers more than 1 litre? ")) 
+
+# Compute the refund amount 
+refund = less * LESS_DEPOSIT + more * MORE_DEPOSIT 
+
+# Display the result 
+print ("Your total refund will be $%.2f." % refund) 
+*****************************************************************************************************************************************************************************************
+
+6. The program that you create for this exercise will begin by reading the cost of a meal ordered at a restaurant from the user.
+   Then your program will compute the tax and tip for the meal. Use your local tax rate when computing the amount of tax owing.
+   Compute the tip as 18 percent of the meal amount (without the tax).
+   The output from your program should include the tax amount, the tip amount, and the grand total for the meal including both 
+   the tax and the tip. Format the output so that all of the values are displayed using two decimal places.
+
+Ans 6.
+# Compute the tax and tip for a restaurant meal. 
+# 
+TAX_RATE = 0.05 
+TIP_RATE = 0.18 
+
+# My local tax rate is 5%. 
+# In Python we represent 5% and 18% as 0.05 and 0.18 respectively. 
+
+# Read the cost of the meal from the user 
+cost = float (input ("Enter the cost of the meal: ")) 
+
+# Compute the tax and the tip 
+tax = cost * TAX_RATE 
+tip = cost * TIP_RATE 
+total = cost + tax + tip 
+
+# Display the result 
+print("\nTip: ", format(tip, '8.2f'))
+print("Sales tax:", format(tax, '8.2f'))
+print("Total: ", format(total, '8.2f'))
+
+********************************************************************************************************************************************************************************
+
+7. Write a program that reads a positive integer, n, from the user and then displays the sum of all of the integers from 1 to n.
+   The sum of the first n positive integers can be computed using the formula:
+   sum = [(n)(n + 1)]/2
+
+Ans 7
+
+##
+#Calculate the sum of first N positive integers.
+##
+ 
+#Read the input from the user
+n = int(input("Enter a positive integer: "))
+ 
+#Calculate the sum
+total = n * (n+1) / 2
+ 
+#Display the result
+print("The sum of the first",n,"positive integers",total)
+*************************************************************************************************************************************************************************************
+8. An online retailer sells two products: widgets and gizmos. Each widget weighs 75 grams. Each gizmo weighs 112 grams.
+   Write a program that reads the number of widgets and the number of gizmos in an order from the user. Then your program
+   should compute and display the total weight of the order.
+
+Ans 8
+
+numOfWidgets = input ("Enter your number of widgets: ")
+numofGizmos = input ("Enter your number of Gizmos: ")
+
+converts1 = int(numOfWidgets) # converts number of widgets into an integer
+convert2 = int(numofGizmos)  # converts number of gizmos into an integer
+
+weightOfWidgets = converts1 * 75
+weightOfGizmos = convert2 * 112
+
+
+totalWeight = weightOfGizmos + weightOfWidgets
+
+convert3 = str(totalWeight)
+print ("") # prints an empty line
+print ("The total weight of the order is " + convert3)
+
+*****************************************************************************************************************************************************************************************
+
+9. In the United States, fuel efficiency for vehicles is normally expressed in miles-per- gallon (MPG).
+   In Canada, fuel efficiency is normally expressed in liters-per-hundred kilometers (L/100 km).
+   Use your research skills to determine how to convert from MPG to L/100 km. Then create a program that reads
+   a value from the user in American units and displays the equivalent fuel efficiency in Canadian units.
+
+ANS 9
+
+#Read the MPG input values from the user 
+
+m = float(input ("Enter the value of m: ")) 
+def convert_mileage(m):
+      #return (282.5 / m )
+       return (236.5 / m )
+if __name__ == '__main__' :
+   print (" MPG = ",convert_mileage(m)," Liters per 100 kilometers") 
+   #print ("Liters per 100 kilometers  = ",convert_mileage(m),"MPG ") 
+**********************************************************************************************************************************************     
+
+10. Create a program that reads two integers, a and b, from the user. Your program should compute and display:
+
+•	The sum of a and b
+•	The difference when b is subtracted from a
+•	The product of a and b
+•	The quotient when a is divided by b
+•	The remainder when a is divided by b
+
+Ans 10
+## 
+# Demonstrate Python's mathematical operators. 
+
+
+
+# Read the input values from the user 
+a = int (input ("Enter the value of a: ")) 
+b = int (input ("Enter the value of b: ")) 
+
+# Compute and display the sum, difference, product, quotient and remainder 
+print (a, "+", b, "is", a + b) 
+print (a, "-", b, "is", a - b)   
+print (a, "*", b, "is", a * b) 
+  #*   * 
+        
+print (a, "/", b, "is", a / b) 
+print (a, "%", b, "is", a % b) 
+**********************************************************************************************
+ 
+  
